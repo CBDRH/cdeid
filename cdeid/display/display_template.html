@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cDeId</title>
+    <style>
+        div {
+            font-size: 14px;
+            font-family: Arial, Times New Roman;
+        }
+        p {
+			word-wrap: break-word;
+			white-space: pre-wrap;
+			white-space: -moz-pre-wrap;
+			white-space: -pre-wrap;
+			white-space: -o-pre-wrap;
+		}
+        .entity {
+            position: relative;
+            display: inline-block;
+            height: auto;
+            vertical-align: top;
+            text-align: center;
+            margin-top: -5px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .entity span {
+            position: relative;
+            display: flex;
+            font-weight: bold;
+            vertical-align: middle;
+            align-items: center;
+            justify-content: center;
+        }
+        .words {
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 3px;
+            padding-bottom: 2px;
+        }
+        .ner {
+            font-size: 10px;
+            color: white;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 4px;
+            padding-bottom: 2px;
+
+        }
+        .person {
+            border: 2px solid #4A148C;
+        }
+        .person .ner {
+            background-color: #4A148C;
+        }
+        .person .words {
+            color: #4A148C;
+        }
+        .idn {
+            border: 2px solid #0E6655;
+        }
+        .idn .ner {
+            background-color: #0E6655;
+        }
+        .idn .words {
+            color: #0E6655;
+        }
+
+        .dob {
+            border: 2px solid #943126;
+        }
+        .dob .ner {
+            background-color: #943126;
+        }
+        .dob .words {
+            color: #943126;
+        }
+
+        .address {
+            border: 2px solid #1A5276;
+        }
+        .address .ner {
+            background-color: #1A5276;
+        }
+        .address .words {
+            color: #1A5276;
+        }
+
+        .phone {
+            border: 2px solid #B7950B;
+        }
+        .phone .ner {
+            background-color: #B7950B;
+        }
+        .phone .words {
+            color: #B7950B;
+        }
+    </style>
+</head>
+<body>
+  <div>
+      % for sent in doc:
+      <p>${sent}</p>
+      % endfor
+  </div>
+</body>
+</html>
