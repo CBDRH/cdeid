@@ -14,7 +14,7 @@ setup(
     description='A Customized De-identification framework',
     long_description=readme,
     long_description_content_type="text/markdown",
-    url='',
+    url='https://github.com/CBDRH/cdeid',
     keywords=['DE-IDENTIFICATION', 'NLP'],
     license=license_content,
     dependency_links=['https://download.pytorch.org/whl/torch_stable.html'],
