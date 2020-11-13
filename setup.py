@@ -7,8 +7,8 @@ with open('LICENSE') as f:
     license_content = f.read()
 
 setup(
-    name='cDeid',
-    version='0.1.0',
+    name='cdeid',
+    version='0.1.1',
     author='Leibo Liu',
     author_email='liuleibo@gmail.com',
     description='A Customized De-identification framework',
@@ -16,10 +16,7 @@ setup(
     long_description=readme,
     url='https://github.com/CBDRH/cdeid',
     keywords=['DE-IDENTIFICATION', 'NLP'],
-    dependency_links=['https://download.pytorch.org/whl/torch_stable.html'],
     install_requires=[
-        'torch==1.6.0',
-        'torchvision==0.7.0',
         'spaCy>=2.3.2',
         'stanza>=1.1.1',
         'flair==0.4.5',
