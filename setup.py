@@ -8,7 +8,7 @@ with open('LICENSE') as f:
 
 setup(
     name='cdeid',
-    version='0.1.1',
+    version='0.1.2',
     author='Leibo Liu',
     author_email='liuleibo@gmail.com',
     description='A Customized De-identification framework',
@@ -20,6 +20,7 @@ setup(
         'spaCy>=2.3.2',
         'stanza>=1.1.1',
         'flair==0.4.5',
+        'mako>=1.1.3'
     ],
     packages=find_packages(exclude=('tests', 'docs')),
     classifiers=[

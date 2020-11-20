@@ -7,13 +7,14 @@ data sets which are extracted from their own free text corpus. cDeid is based on
 [Stanza][stanza] and [FLAIR][flair]. 
 
 ## Installation
-
+This project is based on Python 3.7+. Please install it if you do not have. PyTorch is used by FLAIR and Stanza toolkits.
+It needs to be installed from [here][pytorch] before you install this project.
 ```sh
 pip install cdeid
 ```
 ## Usage example
 We are using the [pre-trained word2vec embeddings][word2vec] released from the CoNLL 2017 Shared Task. It is important
-to specify the customized PHI types in the corpus otherwise it will cause runtime error during training the models. 
+to specify the customized PHI types in the corpus otherwise it will cause runtime error during training the models.  
 ### Using the Python API
 #### Train the models
 ```python
@@ -34,17 +35,19 @@ deider.output(doc)
 ### Using the command line
 #### Train the models
 ```sh
-python cdeid --command train --workspace C:/workspace --data_dir C:/data --phi_types PHONE PERSON ADDRESS IDN DOB --wordvec_file C:/wordvec/English/en.vectors.xz
+python -m cdeid --command train --workspace C:/workspace --data_dir C:/data --phi_types PHONE PERSON ADDRESS IDN DOB --wordvec_file C:/wordvec/English/en.vectors.xz
 ```
 #### De-identify a sample document
 ```sh
-python cdeid --command deid --workspace C:/workspace --deid_output_dir C:/output --deid_file C:/raw/example.txt
+python -m cdeid --command deid --workspace C:/workspace --deid_output_dir C:/output --deid_file C:/raw/example.txt
 ```
 
 ## Release History
 
-* 0.1.0
+* 0.1.1
     * The first release
+* 0.1.2
+    * Modify Readme and Setup
 
 ## Contributors
 
@@ -58,3 +61,4 @@ Leibo Liu - initial work - [leiboliu](https://github.com/leiboliu/)
 [stanza]: https://stanfordnlp.github.io/stanza/
 [flair]: https://github.com/flairNLP/flair
 [word2vec]:https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1989/word-embeddings-conll17.tar?sequence=9&isAllowed=y
+[pytorch]: https://pytorch.org/
