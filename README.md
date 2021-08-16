@@ -6,9 +6,6 @@ cDeid is a customized de-identification method. The users can easily train their
 data sets which are extracted from their own free text corpus. cDeid is based on 3 popular NLP toolkits: [spaCy][spacy], 
 [Stanza][stanza] and [FLAIR][flair]. 
 
-## Demo
-A demo can be accessed [here][demolink].
-
 ## Installation
 This project is based on Python 3.7+. Please install it if you do not have. PyTorch is used by FLAIR and Stanza toolkits.
 It needs to be installed from [here][pytorch] before you install this project.
