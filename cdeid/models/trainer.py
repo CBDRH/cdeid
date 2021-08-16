@@ -221,7 +221,7 @@ class Trainer:
         self.update_train_status(7)
         logger.info('Training step 7 - train flair on imbalanced sets - started')
         flair_trainer = FlairTrainer(self.workspace, self.train_file, self.dev_file, self.test_file, balanced=False)
-        flair_trainer.train()
+        flair_trainer.train(batch_size=64)
         logger.info('Training step 7 - train flair on imbalanced sets - completed')
 
     # 8-ensemble models

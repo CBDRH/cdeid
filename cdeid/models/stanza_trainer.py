@@ -70,6 +70,6 @@ class StanzaTrainer:
 
         args = ['--train_file', str(data_dir / train_file_name), '--eval_file', str(data_dir / dev_file_name),
                 '--lang', 'en', '--mode', 'train', '--wordvec_file', wordvec_path, '--save_dir', str(model_path),
-                '--save_name', 'stanza_model.pt']
+                '--save_name', 'stanza_model.pt', '--batch_size', '16', '--lr', '0.1', '--dropout', '0.5']
 
         stanza_agent.main(args)

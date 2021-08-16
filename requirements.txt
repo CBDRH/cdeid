@@ -1,4 +1,4 @@
 stanza>=1.1.1
 spacy>=2.3.2
-flair==0.4.5
+flair==0.8
 https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.3.1/en_core_web_lg-2.3.1.tar.gz#egg=en_core_web_lg

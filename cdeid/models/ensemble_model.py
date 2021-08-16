@@ -66,8 +66,9 @@ class EnsembleModel:
             spacy_preds_bio2_imbalanced = to_bio2(tag5)
 
             final_tags = []
-            tmp_tags = zip(tag3, spacy_preds_bio2, stanza_preds_bio2,
-                             tag6, spacy_preds_bio2_imbalanced, stanza_preds_bio2_imbalanced)
+            # flair_imbalanced is the best F1
+            tmp_tags = zip(tag6, spacy_preds_bio2, stanza_preds_bio2,
+                             tag3, spacy_preds_bio2_imbalanced, stanza_preds_bio2_imbalanced)
             for token_tag in tmp_tags:
                 tag = Counter(list(token_tag))
                 common_tag = tag.most_common(1)[0][0]

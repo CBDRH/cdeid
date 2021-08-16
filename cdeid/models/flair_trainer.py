@@ -1,6 +1,6 @@
 from flair.data import Corpus
 from flair.datasets import ColumnCorpus
-from flair.embeddings import TokenEmbeddings, WordEmbeddings, StackedEmbeddings
+from flair.embeddings import TokenEmbeddings, TransformerWordEmbeddings, StackedEmbeddings
 from flair.models import SequenceTagger
 from flair.trainers import ModelTrainer
 from typing import List
@@ -25,7 +25,7 @@ class FlairTrainer:
             return 'balanced'
         return ''
 
-    def train(self):
+    def train(self, batch_size=16):
         # define the columns of data files
         columns = {0: 'text', 1: 'ner'}
 
@@ -40,11 +40,12 @@ class FlairTrainer:
 
         tag_dictionary = corpus.make_tag_dictionary(tag_type='ner')
         embedding_types: List[TokenEmbeddings] = [
-            WordEmbeddings('glove'),
+            TransformerWordEmbeddings('bert-base-uncased'),
         ]
         embeddings: StackedEmbeddings = StackedEmbeddings(embeddings=embedding_types)
 
         tagger: SequenceTagger = SequenceTagger(hidden_size=256,
+                                                dropout=0.5,
                                                 embeddings=embeddings,
                                                 tag_dictionary=tag_dictionary,
                                                 tag_type='ner',
@@ -54,5 +55,5 @@ class FlairTrainer:
 
         trainer.train(model_path,
                       learning_rate=0.1,
-                      mini_batch_size=32,
+                      mini_batch_size=batch_size,
                       max_epochs=150)

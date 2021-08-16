@@ -19,7 +19,7 @@ setup(
     install_requires=[
         'spaCy>=2.3.2',
         'stanza>=1.1.1',
-        'flair==0.4.5',
+        'flair==0.8',
         'mako>=1.1.3'
     ],
     packages=find_packages(exclude=('tests', 'docs')),
