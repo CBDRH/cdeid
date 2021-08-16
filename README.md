@@ -48,6 +48,8 @@ python -m cdeid --command deid --workspace C:/workspace --deid_output_dir C:/out
     * The first release
 * 0.1.2
     * Modify Readme and Setup
+* 0.1.3
+    * Update model trainers
 
 ## Contributors
 
